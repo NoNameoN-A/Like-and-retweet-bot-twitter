@@ -15,9 +15,12 @@ nrTweets = 500
 
 for tweet in tweepy.Cursor(api.search, search).items(nrTweets):
     try:
-        print('Tweet Liked')
+        print('***************')
         tweet.favorite()
+        print('Tweet Liked')
         tweet.retweet()
+        print('Tweet retweeted')
+        print('***************\n')
         time.sleep(60)
     except tweepy.TweepError as e:
         print(e.reason)
